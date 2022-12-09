@@ -1,5 +1,11 @@
-<div>
-    <div class="logo" ></div>
-    <h1 class="title">404 Page</h1>
-    <a href="./../../index.html">let's home</a>
-</div>
+---
+title: 'Ошибка404'
+scripts: 
+    - src: './index.ts'
+      type: module
+---
+{{#extend "layout"}}
+ {{#content "main"}}
+   <div class="root"></div>
+ {{/content}}
+{{/extend}}

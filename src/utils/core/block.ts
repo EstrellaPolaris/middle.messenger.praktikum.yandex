@@ -1,6 +1,6 @@
 import { isEqual } from "../isEqual";
 import { EventBus } from "./eventBus";
-import { v4 as makeUUID } from "uuid";
+//import { v4 as makeUUID } from "uuid";
 import Handlebars from "handlebars";
 
 export type TProperties = Record<string, number | boolean | string>;

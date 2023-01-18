@@ -1,7 +1,7 @@
 import { Block } from '../../utils/block';
 import ChatsList from '../../components/chat-list';
-import template from './messenger.hbs';
-import './messenger.less';
+import template from './chats.hbs';
+import './chats.less';
 import Messenger from '../../components/messenger';
 import Popup from '../../components/popup';
 import Button from '../../components/button';
@@ -27,6 +27,7 @@ export class MessengerPage extends Block {
     });
     
     this.children.messenger = new Messenger({});
+
     this.children.link = new Link({
       path: '/settings',
       text: 'Profile >',

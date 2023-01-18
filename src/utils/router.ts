@@ -1,37 +1,6 @@
-//import BlockConstructable, { Route } from './route';
+import { Route } from './route';
 import { Block } from './block';
-import { isEqual } from './is-equal';
-import { renderDOM } from './render-dom';
 import Error404 from '../pages/error404';
-
-export interface BlockConstructable<P extends Record<string, any> = any> {
-  new (props: P): Block<P>;
-}
-
-export class Route {
-  private _block: Block | null = null;
-
-  constructor(
-    private _pathname: string,
-    private _blockClass: BlockConstructable,
-    private readonly _query: string
-  ) {}
-
-  public leave() {
-    this._block = null;
-  }
-
-  public match(pathname: string) {
-    return isEqual(pathname, this._pathname);
-  }
-
-  public render() {
-    if (!this._block) {
-      this._block = new this._blockClass({});
-      renderDOM(this._query, this._block);
-    }
-  }
-}
 
 class Router {
   private static __instance: Router;
@@ -49,9 +18,8 @@ class Router {
     Router.__instance = this;
   }
 
-  public use(pathname: string, block: BlockConstructable) {
+  public use(pathname: string, block: typeof Block) {
     const route = new Route(pathname, block, this._rootQuery);
-
     this._routes.push(route);
 
     return this;
@@ -59,23 +27,21 @@ class Router {
 
   public start() {
     window.onpopstate = (event: PopStateEvent) => {
+      
       const target = event.currentTarget as Window;
+
       this._onRoute(target.location.pathname);
     };
 
     this._onRoute(window.location.pathname);
-  }
-
-  public reset() {
-    this._routes = [];
-    this._currentRoute = null;
+    console.log(window.location.pathname);
   }
 
   private _onRoute(pathname: string) {
     const route = this.getRoute(pathname);
 
     if (!route) {
-      const errorPage = new Route("/error-404", Error404, this._rootQuery);
+      const errorPage = new Route('/error-404', Error404, this._rootQuery);
       console.log(errorPage);
       errorPage.render();
       return;
@@ -91,7 +57,8 @@ class Router {
   }
 
   public go(pathname: string) {
-    this._history.pushState({}, "", pathname);
+    this._history.pushState({}, '', pathname);
+    
     this._onRoute(pathname);
   }
 
@@ -108,4 +75,4 @@ class Router {
   }
 }
 
-export default new Router("#app");
+export default new Router('#app');

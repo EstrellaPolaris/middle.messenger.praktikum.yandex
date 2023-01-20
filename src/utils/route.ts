@@ -2,12 +2,17 @@ import { isEqual } from './is-equal';
 import { renderDOM } from './render-dom';
 import { Block } from './block';
 
+export interface BlockConstructable<P extends Record<string, any> = any> {
+  new(props: P): Block<P>;
+}
+
 export class Route {
   private _block: Block | null = null;
 
   constructor(
     private _pathname: string,
-    private blockClass: typeof Block,
+    //private blockClass: typeof Block,
+    private readonly blockClass: BlockConstructable,
     private readonly _query: string
   ) {}
 

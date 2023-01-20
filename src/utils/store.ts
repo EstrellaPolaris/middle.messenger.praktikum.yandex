@@ -1,4 +1,4 @@
-import { set } from './helpers';
+import { set } from './set';
 import { EventBus } from './event-bus';
 import { Block } from './block';
 import { IUserData, IChatInfo, IMessage } from './interfaces';

@@ -20,7 +20,7 @@ export class ChatBase extends Block<IChat> {
       isSelected: this.props.id === this.props.selectedChat?.id,
       isMine: true,
       time,
-      avatar: `https://ya-praktikum.tech/api/v2/resources/${this.props.avatar}`
+      avatar: `https://ya-praktikum.tech/api/v2/resources${this.props.avatar}`,
     });
   }
 }

@@ -42,10 +42,6 @@ module.exports = {
           'less-loader',
         ],
       },
-      { 
-        test: /\.svg$/,
-        type: 'asset' 
-      },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',

@@ -11,7 +11,6 @@ export class Route {
 
   constructor(
     private _pathname: string,
-    //private blockClass: typeof Block,
     private readonly blockClass: BlockConstructable,
     private readonly _query: string
   ) {}

@@ -1,10 +1,10 @@
-import { BaseLink as Link } from "./link";
-import { expect } from "chai";
-import sinon from "sinon";
+import { BaseLink as Link } from './link';
+import { expect } from 'chai';
+import sinon from 'sinon';
 
-describe("Link", () => {
-  it("should render component", () => {
-    new Link({ text: "Click me", path: "/" });
+describe('Link', () => {
+  it('should render component', () => {
+    new Link({ text: 'Click me', path: '/' });
   });
 
   let routerMock: any;
@@ -15,10 +15,10 @@ describe("Link", () => {
     };
   });
 
-  it("should call Router.go on click", () => {
+  it('should call Router.go on click', () => {
     const instance = new Link({
-      text: "Click me",
-      path: "/abc",
+      text: 'Click me',
+      path: '/abc',
       router: routerMock as any,
     });
 
@@ -28,10 +28,10 @@ describe("Link", () => {
     expect(routerMock.go.callCount).to.eq(1);
   });
 
-  it("should call Router.go on click with path", () => {
-    const path = "/abc";
+  it('should call Router.go on click with path', () => {
+    const path = '/abc';
     const instance = new Link({
-      text: "Click me",
+      text: 'Click me',
       path,
       router: routerMock as any,
     });

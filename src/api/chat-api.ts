@@ -32,11 +32,11 @@ export class ChatAPI extends BaseAPI {
   }
 
   addUsers(id: number, users: number[]): Promise<unknown> {
-    return this.http.put("/users", { users, chatId: id });
+    return this.http.put('/users', { users, chatId: id });
   }
 
   deleteUsers(id: number, users: number[]): Promise<unknown> {
-    return this.http.delete("/users", { users, chatId: id });
+    return this.http.delete('/users', { users, chatId: id });
   }
 
   async getToken(id: number): Promise<string> {

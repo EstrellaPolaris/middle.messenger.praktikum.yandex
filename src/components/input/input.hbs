@@ -1,0 +1,12 @@
+<div class="{{ divClass }}">
+  <label class="label">{{ label }}</label>
+  {{#if value}}
+    <input class="under-line {{ className }}" type="{{ type }}" name="{{ name }}" id="{{ name }}" placeholder="{{ placeholder }}" value="{{ value }}">
+  {{else}}
+    <input class="under-line {{ className }}" type="{{ type }}" name="{{ name }}" id="{{ name }}" placeholder="{{ placeholder }}">
+  {{/if}}
+  {{#if noError}}
+  {{else}}
+  <span class="error input-error">{{ error }}</span>
+  {{/if}}
+</div>

@@ -1,5 +1,5 @@
 import { Route } from './route';
-import { Block } from './block';
+import  { BlockConstructable } from './route';
 import Error404 from '../pages/error404';
 
 class Router {
@@ -18,7 +18,7 @@ class Router {
     Router.__instance = this;
   }
 
-  public use(pathname: string, block: typeof Block) {
+  public use(pathname: string, block: BlockConstructable) {
     const route = new Route(pathname, block, this._rootQuery);
     this._routes.push(route);
 

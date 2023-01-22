@@ -6,10 +6,6 @@ export class ChatAPI extends BaseAPI {
     super('/chats');
   }
 
-  addAvatar(data: FormData) {
-    return this.http.put('/avatar', data);
-  }
-
   updateAvatar(data: FormData) {
     return this.http.put('/avatar', data);
   }
@@ -22,7 +18,6 @@ export class ChatAPI extends BaseAPI {
     return this.http.get('/');
   }
 
-  
   delete(id: number): Promise<unknown> {
     return this.http.delete('/', { chatId: id});
   }
@@ -32,11 +27,11 @@ export class ChatAPI extends BaseAPI {
   }
 
   addUsers(id: number, users: number[]): Promise<unknown> {
-    return this.http.put("/users", { users, chatId: id });
+    return this.http.put('/users', { users, chatId: id });
   }
 
   deleteUsers(id: number, users: number[]): Promise<unknown> {
-    return this.http.delete("/users", { users, chatId: id });
+    return this.http.delete('/users', { users, chatId: id });
   }
 
   async getToken(id: number): Promise<string> {

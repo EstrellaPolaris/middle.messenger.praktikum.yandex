@@ -1,6 +1,5 @@
 import { Block } from './block';
 import { PropsWithRouter } from '../hocs/with-router'
-//import { IMessage as MessageInfo } from '../controllers/message-controller';
 
 export interface ISignupData {
   first_name?: string;

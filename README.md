@@ -1,65 +1,65 @@
-# Чат
+# Chat
 
 
-## Описание проекта
+## Project Description
 
-Чат для общения в реальном времени в виде одностраничного приложения (Single Page Application, или SPA) без использования готовых фреймворков.
-Cамостоятельная практическая работа, выполненная в рамках обучения на профессиональной программе «Мидл фронтенд-разработчик».
-
-
-## Спринт 1
-
-* Свёрстан макет приложения на основе [шаблона](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1) в Figma.
-* Реализованы основные страницы приложения с использованием шаблонизатора [Handlebars](https://handlebarsjs.com/).
-* Настроена сборка с использованием [Parcel](https://parceljs.org/).
-* Создано dev-окружение и NodeJS + Express для раздачи статических файлов на локальном компьютере.
-* Использован препроцессор [Less](https://lesscss.org/) при написании стилей страниц.
-* [Приложение](https://peppy-frangollo-74608c.netlify.app) автоматически деплоится из ветки `deploy` на [Netlify](https://www.netlify.com/).
+Chat for real-time communication in the form of a single page application (Single Page Application, or SPA) without the use of ready-made frameworks.
+Independent practical work performed as part of training on the professional program "Middle Frontend Developer".
 
 
-## Спринт 2
+## Sprint 1
 
-* Файлы структурированы согласно советам по архитектуре. Добавлен компонентный подход.
-* Проект написан на TypeScript с учётом новых компонентов.
-* Настроен статический анализ кода [ESLint] и [Stylelint]. Использованы принципы SOLID, DRY, KISS.
-* Добавлена клиентская валидация на все формы.
-* Реализована шины событий (`EventBus.ts`).
-* Реализзован компонент (`Block.ts`) с собственными пропсами, жизненным циклом и реактивным ререндером. При изменении пропсов (использованы `Proxy`).
-* Реализаван аналог fetch для запросов к серверу (`HTTPTransport.ts`).
-
-
-## Спринт 3
-
-* Реализация клиентского роутера (`Route.ts`, `Router.ts`).
-* Клиент-серверное взаимодействие и работа с запросами.
-* Внедрён HTTP API чатов, авторизации и пользователей.
-* Добавлен слой `api`.
-* Добавлен слой `controllers`.
-* Реализация центрального хранилища (`Store.ts`).
-* Использован `WebSocket` для работы с real-time сообщениями чата.
-* В приложении реализованы следующее возможности:
-  * Регистрация
-  * Авторизация
-  * Выход из системы
-  * Изменение данных пользователя
-  * Создание и добавление пользователей в чате
-  * Список чатов пользователя
-  * Отправка текстовых сообщений
-* Проект защищён от XSS и DOS.
+* Designed app layout based on [template](https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1) in Figma.
+* Implemented the main pages of the application using the template engine [Handlebars](https://handlebarsjs.com/).
+* Customized build using [Parcel](https://parceljs.org/).
+* Created a dev environment and NodeJS + Express for distributing static files on the local computer.
+* Used preprocessor [Less](https://lesscss.org/) when writing page styles.
+* [App](https://peppy-frangollo-74608c.netlify.app) is automatically deployed from the `deploy` branch to [Netlify](https://www.netlify.com/).
 
 
-## Спринт 4
+## Sprint 2
 
-* Добавлены Unit-тесты для шаблонизатора, роутера, компонента и модуля отправки запросов.
-* Настроена сборка с использованием [Webpack](https://webpack.js.org).
-* Настроен `precommit` на проект.
-* Использован [Docker](https://www.docker.com) для сборки статического приложения.
+* Files are structured according to architectural advice. Added component approach.
+* The project is written in TypeScript, taking into account the new components.
+* Configured static code analysis [ESLint] and [Stylelint]. The principles of SOLID, DRY, KISS are used.
+* Added client validation for all forms.
+* Implemented event bus (`EventBus.ts`).
+* Implemented a component (`Block.ts`) with its own props, lifecycle and reactive renderer. When changing props (using `Proxy`).
+* Implemented analog fetch for requests to the server (`HTTPTransport.ts`).
 
 
-## Установка
+## Sprint 3
 
-- `npm install` - установка зависимостей.
-- `npm run dev` - запуск проекта в режиме разработки.
-- `npm run build` - запуск сборки проекта.
-- `npm run start` - запуск проекта на сервере.
-- `npm run test` - запуск тестов.
+* Implementation of the client router (`Route.ts`, `Router.ts`).
+* Client-server interaction and work with requests.
+* Implemented HTTP API for chats, authorization and users.
+* Added `api` layer.
+* Added `controllers` layer.
+* Implementation of the central store (`Store.ts`).
+* Used `WebSocket` to work with real-time chat messages.
+* The following features are implemented in the application:
+   * Registration
+   * Authorization
+   * Sign Out
+   * Change user data
+   * Create and add users in chat
+   * List of user's chats
+   * Sending text messages
+* The project is protected from XSS and DOS.
+
+
+## Sprint 4
+
+* Added Unit tests for template engine, router, component and request module.
+* Configured build using [Webpack](https://webpack.js.org).
+* Configured `precommit` for the project.
+* Used [Docker](https://www.docker.com) to build a static application.
+
+
+## Installation
+
+- `npm install` - install dependencies.
+- `npm run dev` - run the project in development mode.
+- `npm run build` - start building the project.
+- `npm run start` - start the project on the server.
+- `npm run test` - run tests.

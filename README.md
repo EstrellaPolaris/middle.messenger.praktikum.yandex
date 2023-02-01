@@ -3,7 +3,7 @@
 
 ## Project Description
 
-Chat for real-time communication in the form of a single page application (Single Page Application, or SPA) without the use of ready-made frameworks.
+Chat for real-time communication in the form of a Single Page Application, or SPA without the use of ready-made frameworks.
 Independent practical work performed as part of training on the professional program "Middle Frontend Developer".
 
 
